@@ -2,7 +2,7 @@
 sudo apt-get remove wolfram-engine scratch sonic-pi
 # Actualizacion
 sudo apt-get update
-sudo apt-upgrade
+sudo apt-get upgrade
 # Instalacion de paquetes a usar
 sudo apt-get install python-pip python-setuptools python-dnspython python-argparse python-m2crypto ppp usb-modeswitch wvdial procmail
 # Correccion de zona horaria
