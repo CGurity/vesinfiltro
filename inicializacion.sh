@@ -7,4 +7,6 @@ sudo pip install centinel-dev==0.1.5.1
 centinel-dev --sync
 centinel-dev
 cp otros/config.ini ~/.centinel/config.ini
+cp otros/device_data.py ~/.centinel/experiments/device_data.py
+cp otros/device_data.txt ~/.centinel/data/device_data.txt
 
