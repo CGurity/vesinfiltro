@@ -6,3 +6,4 @@ pip install requests
 pip install centinel-dev==0.1.5.1
 centinel-dev --sync
 centinel-dev
+cp otros/config.ini ~/.centinel/config.ini
