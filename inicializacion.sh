@@ -9,4 +9,4 @@ centinel-dev
 cp otros/config.ini ~/.centinel/config.ini
 cp otros/device_data.py ~/.centinel/experiments/device_data.py
 cp otros/device_data.txt ~/.centinel/data/device_data.txt
-
+nano ~/.centinel/data/device_data.txt
