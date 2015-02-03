@@ -21,3 +21,8 @@ cp otros/config.ini ~/.centinel/config.ini
 cp otros/device_data.py ~/.centinel/experiments/device_data.py
 cp otros/device_data.txt ~/.centinel/data/device_data.txt
 nano ~/.centinel/data/device_data.txt
+# Colocar los cronjobs en su sitio correspondiente
+#	pruebas_habituales
+#	pruebas_on_demand
+#	Actualizacion de parametros de vesinfiltro (periodicidad de pruebas, scripts generales)
+#	Actualizacion del sistema
