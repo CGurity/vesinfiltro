@@ -6,7 +6,7 @@ sudo apt-upgrade
 # Instalacion de paquetes a usar
 sudo apt-get install python-pip python-setuptools python-dnspython python-argparse python-m2crypto ppp usb-modeswitch wvdial procmail
 # Correccion de zona horaria
-sudo cp /usr/share/zoneinfo/Europe/London /etc/localtime
+sudo cp /usr/share/zoneinfo/America/Caracas /etc/localtime
 # Copia de la configuracion de modems 3g en el directorio correspondiente
 sudo cp otros/wvdial_global.conf /etc/wvdial.conf
 # Instalacion de paquetes python mas actualizados o solo disponibles en pip
@@ -21,8 +21,10 @@ cp otros/config.ini ~/.centinel/config.ini
 cp otros/device_data.py ~/.centinel/experiments/device_data.py
 cp otros/device_data.txt ~/.centinel/data/device_data.txt
 nano ~/.centinel/data/device_data.txt
+# Creación de las carpetas locales
+#mkdir ~/.centinel/vesinfiltrolocal/
+#mkdir ~/.centinel/vesinfiltrolocal/logs/
 # Colocar los cronjobs en su sitio correspondiente
-#	pruebas_habituales
-#	pruebas_on_demand
+sudo cp schedule /etc/cron.d/schedule_centinel
 #	Actualizacion de parametros de vesinfiltro (periodicidad de pruebas, scripts generales)
 #	Actualizacion del sistema
