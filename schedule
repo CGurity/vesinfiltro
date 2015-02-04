@@ -1,0 +1,2 @@
+2,32 * * * * pi sh /home/pi/vesinfiltro/sync_test_send.sh
+* * * * * pi sh /home/pi/vesinfiltro/on_demand_tests/sync_on_demand.sh
