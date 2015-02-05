@@ -25,8 +25,9 @@ nano ~/.centinel/data/device_data.txt
 mkdir ~/archivos_locales/
 mkdir ~/archivos_locales/data_temporal
 mkdir ~/archivos_locales/experiments_temporal
-mkdir ~/archivos_locales/experiments_od
+mkdir ~/archivos_locales/experiments_od
 mkdir ~/archivos_locales/logs/
+mkdir ~/archivos_locales/updates/
 # Colocar los cronjobs en su sitio correspondiente
 sudo cp schedule /etc/cron.d/schedule_centinel
 #	Actualizacion de parametros de vesinfiltro (periodicidad de pruebas, scripts generales)
