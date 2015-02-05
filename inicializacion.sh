@@ -22,9 +22,14 @@ cp otros/device_data.py ~/.centinel/experiments/device_data.py
 cp otros/device_data.txt ~/.centinel/data/device_data.txt
 nano ~/.centinel/data/device_data.txt
 # Creación de las carpetas locales
-#mkdir ~/.centinel/vesinfiltrolocal/
-#mkdir ~/.centinel/vesinfiltrolocal/logs/
+mkdir ~/archivos_locales/
+mkdir ~/archivos_locales/data_temporal
+mkdir ~/archivos_locales/experiments_temporal
+mkdir ~/archivos_locales/experiments_od
+mkdir ~/archivos_locales/logs/
 # Colocar los cronjobs en su sitio correspondiente
 sudo cp schedule /etc/cron.d/schedule_centinel
 #	Actualizacion de parametros de vesinfiltro (periodicidad de pruebas, scripts generales)
 #	Actualizacion del sistema
+sudo cp on_demand_tests/id_test ~/archivos_locales/id_test
+sudo cp updates/id_update ~/archivos_locales/id_update

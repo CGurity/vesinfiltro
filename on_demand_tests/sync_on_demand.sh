@@ -1,9 +1,9 @@
 #!/bin/bash
 id_test_server=$(curl -L -s http://creceiver.guerracarlos.com/on_demand/on_demand_id.txt)
 echo "Id en server: " $id_test_server
-id_test_aguila=$(cat ~/vesinfiltro/on_demand_tests/id_test)
+id_test_aguila=$(cat ~/archivos_locales/id_test)
 echo "Id en aguila: " $id_test_aguila
-lockfile=~/vesinfiltro/vesinfiltro.lock
+lockfile=~/vesinfiltro.lock
 if [ "$id_test_server" == "$id_test_aguila" ]
 then
     echo "Test de emergencia al dia"
@@ -14,12 +14,13 @@ else
     echo "Test de emergencia pendiente"
     #mover datos habituales de ubicacion
     #   mover data/*.txt a ubicación temporal
-    rm -f ~/vesinfiltro/temp/*
-    mv ~/.centinel/data/* ~/vesinfiltro/temp/data/
-    cp ~/vesinfiltro/temp/data/device_data.txt ~/.centinel/data/
-    cp ~/.centinel/experiments/* ~/vesinfiltro/temp/experiments/
+    rm -f ~/archivos_locales/data_temporal/*
+    rm -f ~/archivos_locales/experiments_temporal/*
+    mv ~/.centinel/data/* ~/archivos_locales/data_temporal/
+    cp ~/archivos_locales/data_temporal/device_data.txt ~/.centinel/data/
+    cp ~/.centinel/experiments/* ~/archivos_locales/experiments_temporal/
     #   restituir los últimos experimentos on_demand
-    cp ~/vesinfiltro/temp/experiments_od/* ~/.centinel/experiments/
+    cp ~/archivos_locales/experiments_od/* ~/.centinel/experiments/
     #descargar -datos-y experimentos que hagan falta
     #   descargar ciegamente data on demand del server
     #   comparar experimentos y descargar lo que toque
@@ -85,12 +86,12 @@ else
     python ~/vesinfiltro/send_results.py
     #reestablecer archivos habituales
     rm -f ~/.centinel/data/*
-    mv ~/.centinel/experiments/* ~/vesinfiltro/temp/experiments_od/
-    mv ~/vesinfiltro/temp/data/* ~/.centinel/data/
-    mv ~/vesinfiltro/temp/experiments/* ~/.centinel/experiments/
+    mv ~/.centinel/experiments/* ~/archivos_locales/experiments_od/
+    mv ~/archivos_locales/data_temporal/* ~/.centinel/data/
+    mv~/experiments_locales/experiments_temporal/* ~/.centinel/experiments/
     #lockfile
-    rm -f ~/vesinfiltro/vesinfiltro.lock
+    rm -f ~/vesinfiltro.lock
     trap - INT TERM EXIT
     #cambiar id en aguila
-    ~/vesinfiltro/on_demand_tests/id_test << $id_test_server
+    ~/archivos_locales/id_test << $id_test_server
 fi
