@@ -5,7 +5,7 @@ import logging
 #import urllib2
 
 class HTTPRequestExperiment(Experiment):
-    name = "datos_aguila"
+    name = "device_data"
 
     def __init__(self, input_file):
         self.input_file  = input_file
