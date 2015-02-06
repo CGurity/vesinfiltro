@@ -34,3 +34,22 @@ sudo cp schedule /etc/cron.d/schedule_centinel
 #	Actualizacion del sistema
 sudo cp on_demand_tests/id_test ~/archivos_locales/id_test
 sudo cp updates/id_update ~/archivos_locales/id_update
+echo -n "Este dispositivo usa un modem usb? (1- Si / 2- No) > "
+read modem_usb
+if [ "$modem_usb" == "1"  ]
+then
+    echo -n "Que operadora (1- Digitel / 2- Movistar) > "
+    read operadora
+    if [ "$operadora" == "1"  ]
+    then
+        #digitel
+        touch modem
+        echo "@reboot root wvdial digitel" > modem
+	sudo mv modem /etc/cron.d/modem
+    else
+        #movistar
+        touch modem
+        echo "@reboot root wvdial movistar" > modem
+	sudo mv modem /etc/cron.d/modem
+    fi
+fi
